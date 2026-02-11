@@ -1,63 +1,893 @@
-<html>
-        <head>
-            <base href="/cv_eportfolio_vrai/">
-            <img src="rk.jpg" />
-            <title>
-                Inayah Belmessaoud
-            </title>
-        </head>
-    <body>
-        <h1>Présentation</h1>
-            <ul>Je m'appelle Inayah Belmessaoud, 18 ans et étudiante au lycée Turgot à Paris.</ul>
-        <h1>Compétences</h1>
-            </ul>
-            <a href="stages.html">stages</a>
-            <a href="projets.html">Projets</a>
-            <a href="developpement.html">Développemment</a>
-            <h2>Développement</h2>
-                <ul>HTML</ul>
-                <ul>Python</ul>
-                <ul>Javascript</ul>
-                <ul>CSS</ul>
-                <ul>PHP</ul>
-                <ul>SQL</ul>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Portfolio - [Votre Nom]</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-            <h2>Système</h2>
-                <ul>Linux
-                    <ul>Bash</ul>
-                </ul>
-                    <ul>Windows</ul>
-            <h2>Réseaux</h2>
-                <ul>Création de machines virtuelles ubuntu</ul>
-                <ul>Configuration réseau</ul>
-                <ul>Adresses IP</ul>
-            <h2>CEJM</h2>
-                <ul>Droits du travail</ul>
-                <ul>Droits de l'informatique</ul>
-                <ul>Droits du contrat</ul>
-            <h2>Cyber</h2>
-                <ul>RGPD</ul>
-                <ul>Méthode EBIOS</ul>
-                <ul>Sensibilisation à l'hygiène informatique</ul>
-            <h2>Langues</h2>
-                <ul>Francais</ul>
-                <ul>Anglais</ul>
-                <ul>Russe (niveau débutant)</ul>
-                <ul>Chinois (niveau débutant)</ul>
-                <ul>Japonais (niveau débutant)</ul>
-            <h2>Projet</h2>
-                <ul>Projet sur la réalisation d'un jeu de nombres en réseau</ul>
-                <ul>Projet sur la réalisation de machines virtuelle sur l'animation 2D</ul>
-            <h2>Virtualisation</h2>
-                <ul>Création et configuration de machines virtuelles (Virtual Box)</ul>
-        <h1>Certifications</h1>
-            <ul>Pix</ul>
-            <ul>Cisco</ul>
-        <h1>Situations professionelles</h1>
-         
-            <ul>Stage d'observation en école maternelle</ul>
-        <h1>Veille technologique</h1>
-        <h1>Autre</h1>
-        
-    </body>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f0ff;
+            min-height: 100vh;
+        }
+
+        /* Navigation */
+        nav {
+            background: #BB88EE;
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 5px 15px rgba(187, 136, 238, 0.3);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            overflow-x: auto;
+            padding: 0 10px;
+        }
+
+        nav li {
+            margin: 0;
+            white-space: nowrap;
+        }
+
+        nav a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 18px 22px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 15px;
+            border-bottom: 3px solid transparent;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        nav a:hover {
+            background: rgba(255, 187, 0, 0.15);
+            border-bottom: 3px solid #FFBB00;
+        }
+
+        nav a.active {
+            background: rgba(255, 187, 0, 0.2);
+            border-bottom: 3px solid #FFBB00;
+            color: #fff;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Sections */
+        section {
+            background: white;
+            margin-bottom: 30px;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(187, 136, 238, 0.15);
+            display: none;
+            animation: fadeIn 0.5s;
+            border-left: 8px solid #BB88EE;
+        }
+
+        section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Accueil */
+        .hero {
+            background: #BB88EE;
+            color: white;
+            text-align: center;
+            padding: 100px 40px !important;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 15px 40px rgba(187, 136, 238, 0.25);
+            border-left: none;
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+            font-weight: 800;
+        }
+
+        .hero .subtitle {
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            opacity: 0.98;
+            font-weight: 600;
+        }
+
+        .hero .description {
+            font-size: 1.1em;
+            max-width: 700px;
+            margin: 20px auto;
+            line-height: 1.8;
+            opacity: 0.95;
+            background: rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        /* Titres */
+        h2 {
+            color: #BB88EE;
+            border-bottom: 4px solid #FFBB00;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            font-size: 2.2em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h3 {
+            color: #FFBB00;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        h4 {
+            color: #BB88EE;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        /* Items */
+        .item {
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #f0e6ff;
+        }
+
+        .item:last-child {
+            border-bottom: none;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .item-title {
+            font-weight: 700;
+            font-size: 1.2em;
+            color: #BB88EE;
+        }
+
+        .item-period {
+            color: #fff;
+            font-weight: 700;
+            font-size: 0.95em;
+            background: #FFBB00;
+            padding: 5px 12px;
+            border-radius: 5px;
+        }
+
+        .item-subtitle {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 8px;
+        }
+
+        .item-description {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .skill-category {
+            background: #f5f0ff;
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 5px solid #FFBB00;
+            border-top: 3px solid #BB88EE;
+            box-shadow: 0 4px 12px rgba(187, 136, 238, 0.1);
+        }
+
+        .skill-category h4 {
+            margin-top: 0;
+            color: #BB88EE;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .skill-item {
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .skill-name {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .skill-bar {
+            width: 150px;
+            height: 8px;
+            background: #ddd;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-left: 10px;
+        }
+
+        .skill-level {
+            height: 100%;
+            background: linear-gradient(90deg, #BB88EE, #FFBB00);
+            border-radius: 4px;
+            box-shadow: 0 0 10px rgba(187, 136, 238, 0.3);
+        }
+
+        /* Documents */
+        .documents-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .document-card {
+            background: #f5f0ff;
+            border: 2px solid #FFBB00;
+            border-radius: 12px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(187, 136, 238, 0.1);
+        }
+
+        .document-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(187, 136, 238, 0.25);
+            border-color: #BB88EE;
+        }
+
+        .document-icon {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .document-name {
+            font-weight: 700;
+            color: #BB88EE;
+            margin-bottom: 5px;
+            font-size: 1.1em;
+        }
+
+        .document-type {
+            color: #FFBB00;
+            font-size: 0.85em;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .document-link {
+            display: inline-block;
+            background: #BB88EE;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 0.9em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .document-link:hover {
+            transform: scale(1.08);
+            box-shadow: 0 5px 15px rgba(187, 136, 238, 0.3);
+            background: #FFBB00;
+            color: #333;
+        }
+
+        /* Projets */
+        .project-card {
+            background: #f5f0ff;
+            border-radius: 12px;
+            padding: 28px;
+            border-left: 6px solid #BB88EE;
+            border-top: 3px solid #FFBB00;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(187, 136, 238, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 8px 25px rgba(187, 136, 238, 0.2);
+        }
+
+        .project-title {
+            color: #BB88EE;
+            font-weight: 700;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .tag {
+            background: #BB88EE;
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+        }
+
+        .project-description {
+            color: #555;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .project-link {
+            color: #BB88EE;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .project-link:hover {
+            color: #FFBB00;
+            transform: translateX(5px);
+        }
+
+        /* Veille Techno */
+        .news-item {
+            background: #f5f0ff;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border-left: 5px solid #FFBB00;
+            border-top: 3px solid #BB88EE;
+            box-shadow: 0 4px 12px rgba(187, 136, 238, 0.1);
+        }
+
+        .news-title {
+            font-weight: 700;
+            color: #BB88EE;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .news-date {
+            color: #FFBB00;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .news-source {
+            color: #999;
+            font-size: 0.85em;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        /* Certifications */
+        .certification-card {
+            background: #f5f0ff;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border: 2px solid #FFBB00;
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            gap: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(187, 136, 238, 0.1);
+        }
+
+        .certification-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(187, 136, 238, 0.2);
+        }
+
+        .certification-info h4 {
+            margin-top: 0;
+            color: #BB88EE;
+        }
+
+        .certification-badge {
+            background: #BB88EE;
+            color: white;
+            padding: 18px 24px;
+            border-radius: 10px;
+            text-align: center;
+            white-space: nowrap;
+            min-width: 120px;
+            font-weight: 700;
+            box-shadow: 0 5px 15px rgba(187, 136, 238, 0.2);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: row;
+            }
+
+            nav a {
+                padding: 15px 12px;
+                font-size: 13px;
+            }
+
+            .hero h1 {
+                font-size: 2.2em;
+            }
+
+            h2 {
+                font-size: 1.6em;
+            }
+
+            section {
+                padding: 25px;
+            }
+
+            .item-header {
+                flex-direction: column;
+            }
+
+            .certification-card {
+                flex-direction: column;
+            }
+
+            .certification-badge {
+                width: 100%;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#" data-section="accueil" class="nav-link active">Accueil</a></li>
+            <li><a href="#" data-section="parcours-scolaire" class="nav-link">Parcours Scolaire</a></li>
+            <li><a href="#" data-section="certifications" class="nav-link">Certifications</a></li>
+            <li><a href="#" data-section="experiences" class="nav-link">Expériences</a></li>
+            <li><a href="#" data-section="competences" class="nav-link">Compétences</a></li>
+            <li><a href="#" data-section="documentation" class="nav-link">Documentation</a></li>
+            <li><a href="#" data-section="projets" class="nav-link">Projets</a></li>
+            <li><a href="#" data-section="veille" class="nav-link">Veille Techno</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <!-- ACCUEIL -->
+        <section id="accueil" class="active">
+            <div class="hero">
+                <h1>[Votre Nom]</h1>
+                <p class="subtitle">Étudiant(e) en BTS SIO</p>
+                <p class="description">
+                    Passionné(e) par l'informatique et les solutions technologiques innovantes, je suis actuellement en formation BTS SIO (Services Informatiques aux Organisations). 
+                    À travers mon parcours, j'ai développé des compétences solides en développement web, gestion de projets et support utilisateur. 
+                    Je suis motivé(e) par la résolution de problèmes techniques et je cherche constamment à approfondir mes connaissances dans les dernières technologies.
+                </p>
+            </div>
+        </section>
+
+        <!-- PARCOURS SCOLAIRE -->
+        <section id="parcours-scolaire">
+            <h2>Parcours Scolaire</h2>
+            
+            <div class="item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">BTS SIO (Services Informatiques aux Organisations)</div>
+                        <div class="item-subtitle">[Nom de l'établissement]</div>
+                    </div>
+                    <div class="item-period">2023 - 2025</div>
+                </div>
+                <div class="item-description">
+                    Formation de deux ans en informatique avec deux options possibles : Solutions d'Infrastructure, Systèmes et Réseaux (SISR) ou Solutions Logicielles et Applications Métier (SLAM). 
+                    Apprentissage des bonnes pratiques en développement, gestion de projets, support utilisateur et sécurité informatique.
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">Baccalauréat [Filière]</div>
+                        <div class="item-subtitle">[Nom du lycée]</div>
+                    </div>
+                    <div class="item-period">2021 - 2023</div>
+                </div>
+                <div class="item-description">
+                    Obtention du baccalauréat [filière] avec mention [bien/très bien]. 
+                    Développement de l'intérêt pour l'informatique et les sciences.
+                </div>
+            </div>
+        </section>
+
+        <!-- CERTIFICATIONS -->
+        <section id="certifications">
+            <h2>Certifications</h2>
+            
+            <div class="certification-card">
+                <div class="certification-info">
+                    <h4>[Nom de la certification]</h4>
+                    <p>Certification en [domaine spécifique]. Validant des compétences en [domaines couverts].</p>
+                    <p><strong>Organisme :</strong> [Nom de l'organisme]</p>
+                </div>
+                <div class="certification-badge">
+                    <div style="font-size: 1.2em; margin-bottom: 5px;">✓</div>
+                    <div>[Année]</div>
+                </div>
+            </div>
+
+            <div class="certification-card">
+                <div class="certification-info">
+                    <h4>[Nom d'une autre certification]</h4>
+                    <p>Certification en [domaine]. Compétences validées : [détails].</p>
+                    <p><strong>Organisme :</strong> [Organisme]</p>
+                </div>
+                <div class="certification-badge">
+                    <div style="font-size: 1.2em; margin-bottom: 5px;">✓</div>
+                    <div>[Année]</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPÉRIENCES PROFESSIONNELLES -->
+        <section id="experiences">
+            <h2>Expériences Professionnelles</h2>
+            
+            <div class="item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">[Intitulé du poste]</div>
+                        <div class="item-subtitle">[Nom de l'entreprise]</div>
+                    </div>
+                    <div class="item-period">[Date début] - [Date fin]</div>
+                </div>
+                <div class="item-description">
+                    Description de votre rôle et de vos responsabilités. Explicitez les projets auxquels vous avez participé, 
+                    les technologies utilisées, et les résultats ou améliorations apportées.
+                </div>
+                <div style="color: #667eea; font-weight: 600; margin-top: 10px;">
+                    Compétences développées : [Compétence 1], [Compétence 2], [Compétence 3]
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">[Intitulé du poste]</div>
+                        <div class="item-subtitle">[Nom de l'entreprise]</div>
+                    </div>
+                    <div class="item-period">[Date début] - [Date fin]</div>
+                </div>
+                <div class="item-description">
+                    Décrivez ici vos missions, votre contribution au projet/équipe, et les apprentissages clés 
+                    que vous avez tirés de cette expérience.
+                </div>
+                <div style="color: #667eea; font-weight: 600; margin-top: 10px;">
+                    Compétences développées : [Compétence 1], [Compétence 2], [Compétence 3]
+                </div>
+            </div>
+        </section>
+
+        <!-- COMPÉTENCES -->
+        <section id="competences">
+            <h2>Compétences Techniques</h2>
+            
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Développement Web</h4>
+                    <div class="skill-item">
+                        <span class="skill-name">HTML/CSS</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">JavaScript</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 75%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">PHP</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 70%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4>Bases de Données</h4>
+                    <div class="skill-item">
+                        <span class="skill-name">SQL</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">MySQL</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4>Outils & Systèmes</h4>
+                    <div class="skill-item">
+                        <span class="skill-name">Git/GitHub</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 75%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Windows Server</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 65%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4>Langages Supplémentaires</h4>
+                    <div class="skill-item">
+                        <span class="skill-name">Python</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 70%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Java</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 65%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DOCUMENTATION -->
+        <section id="documentation">
+            <h2>Documentation</h2>
+            <p style="margin-bottom: 25px; color: #666;">
+                Consultez et téléchargez mes documents professionnels, CV, et ressources utiles.
+            </p>
+            
+            <div class="documents-grid">
+                <div class="document-card">
+                    <div class="document-icon">📄</div>
+                    <div class="document-name">Curriculum Vitae</div>
+                    <div class="document-type">PDF</div>
+                    <a href="documents/CV_[Nom].pdf" class="document-link" download>Télécharger</a>
+                </div>
+
+                <div class="document-card">
+                    <div class="document-icon">📋</div>
+                    <div class="document-name">Lettre de Motivation</div>
+                    <div class="document-type">PDF</div>
+                    <a href="documents/Lettre_Motivation.pdf" class="document-link" download>Télécharger</a>
+                </div>
+
+                <div class="document-card">
+                    <div class="document-icon">📊</div>
+                    <div class="document-name">Portfolio Détaillé</div>
+                    <div class="document-type">PDF</div>
+                    <a href="documents/Portfolio_Detaille.pdf" class="document-link" download>Télécharger</a>
+                </div>
+
+                <div class="document-card">
+                    <div class="document-icon">🎓</div>
+                    <div class="document-name">Diplômes & Certificats</div>
+                    <div class="document-type">ZIP</div>
+                    <a href="documents/Certificats.zip" class="document-link" download>Télécharger</a>
+                </div>
+
+                <div class="document-card">
+                    <div class="document-icon">📑</div>
+                    <div class="document-name">Ressources Techniques</div>
+                    <div class="document-type">Dossier</div>
+                    <a href="documents/" class="document-link">Consulter</a>
+                </div>
+
+                <div class="document-card">
+                    <div class="document-icon">🔗</div>
+                    <div class="document-name">Liens Utiles</div>
+                    <div class="document-type">Web</div>
+                    <a href="#veille" class="document-link">Voir Veille Techno</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJETS -->
+        <section id="projets">
+            <h2>Mes Projets</h2>
+
+            <div class="project-card">
+                <div class="project-title">[Titre du Projet]</div>
+                <div class="project-tags">
+                    <span class="tag">HTML/CSS</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">Responsive</span>
+                </div>
+                <div class="project-description">
+                    Description du projet : objectifs, technologies utilisées, difficultés rencontrées et solutions apportées. 
+                    Expliquez comment ce projet a contribué à développer vos compétences.
+                </div>
+                <a href="#" class="project-link">Voir le détail du projet →</a>
+            </div>
+
+            <div class="project-card">
+                <div class="project-title">[Titre du Projet]</div>
+                <div class="project-tags">
+                    <span class="tag">PHP</span>
+                    <span class="tag">MySQL</span>
+                    <span class="tag">CRUD</span>
+                </div>
+                <div class="project-description">
+                    Description du projet et de votre rôle. Précisez les étapes du développement, 
+                    les technologies utilisées et les apprentissages acquis.
+                </div>
+                <a href="#" class="project-link">Voir le détail du projet →</a>
+            </div>
+
+            <div class="project-card">
+                <div class="project-title">[Titre du Projet]</div>
+                <div class="project-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">Automatisation</span>
+                </div>
+                <div class="project-description">
+                    Décrivez ici un projet personnel ou scolaire, l'impact qu'il a eu, 
+                    et les compétences qu'il vous a permis de développer.
+                </div>
+                <a href="#" class="project-link">Voir le détail du projet →</a>
+            </div>
+        </section>
+
+        <!-- VEILLE TECHNOLOGIQUE -->
+        <section id="veille">
+            <h2>Veille Technologique</h2>
+            <p style="margin-bottom: 25px; color: #666;">
+                Suivi des dernières tendances et actualités technologiques qui m'intéressent.
+            </p>
+
+            <div class="news-item">
+                <div class="news-title">Intelligence Artificielle et Automatisation</div>
+                <div class="news-date">Intérêt depuis : [Date]</div>
+                <p>
+                    Description de votre intérêt pour ce domaine. Quels outils suivez-vous ? 
+                    Quels projets envisagez-vous ? Comment l'IA peut transformer votre domaine ?
+                </p>
+                <div class="news-source">
+                    Sources : OpenAI, Medium, Dev.to, conférences YouTube
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">Cybersécurité et Protection des Données</div>
+                <div class="news-date">Intérêt depuis : [Date]</div>
+                <p>
+                    Détaillez votre suivi de l'actualité en cybersécurité. Quels sont les derniers défis ? 
+                    Quels frameworks ou outils suivez-vous ?
+                </p>
+                <div class="news-source">
+                    Sources : Blog CNIL, HackerNews, SecurityWeekly
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">Développement Web Moderne</div>
+                <div class="news-date">Intérêt depuis : [Date]</div>
+                <p>
+                    Parlez des frameworks web qui vous intéressent. React, Vue, Angular ? 
+                    Quelles tendances observez-vous ? Qu'aimeriez-vous approfondir ?
+                </p>
+                <div class="news-source">
+                    Sources : Stack Overflow, CSS-Tricks, Vue/React Official Blogs
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Navigation et affichage des sections
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('section');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                // Récupérer l'ID de la section
+                const sectionId = link.getAttribute('data-section');
+                
+                // Masquer toutes les sections
+                sections.forEach(section => {
+                    section.classList.remove('active');
+                });
+                
+                // Afficher la section cible
+                const targetSection = document.getElementById(sectionId);
+                if (targetSection) {
+                    targetSection.classList.add('active');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+                
+                // Mettre à jour les liens de navigation
+                navLinks.forEach(l => {
+                    l.classList.remove('active');
+                });
+                link.classList.add('active');
+            });
+        });
+
+        // Optionnel : Ajouter un peu d'interactivité aux documents
+        const documentCards = document.querySelectorAll('.document-card');
+        documentCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-5px)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
 </html>
